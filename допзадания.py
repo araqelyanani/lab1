@@ -6,7 +6,7 @@ popular = []
 with open('books.csv') as csvfile:
     table = csv.reader(csvfile, delimiter=';')
     for row in list(table)[1:]:
-        popular.append([int(row[8]), row[1]])
+        popular.append([int(row[8]), row[1], row[6][6:10]])
 
         tags.append(row[12])
         t = ''.join(tags)
@@ -24,5 +24,5 @@ with open('books.csv') as csvfile:
     pop = sorted(popular, reverse=True)
     w = 0
     while w < 20:
-        print(pop[w][1])
+        print(pop[w][1], pop[w][2])
         w += 1
